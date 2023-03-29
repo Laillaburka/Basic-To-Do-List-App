@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ToDoListApp {
+
+    public static void main(String[] args) {
+        ArrayList<String> toDoList = new ArrayList<>(); // create an ArrayList to hold the to-do items
+        Scanner scanner = new Scanner(System.in); // create a Scanner object to read user input
+        String input = ""; // create a variable to hold the user's input
+
+        // loop until the user enters "quit"
+        while (!input.equals("quit")) {
+            System.out.println("Enter a to-do item (or type \"quit\" to exit): ");
+            input = scanner.nextLine(); // read the user's input
+
+            // if the user didn't enter "quit", add the item to the to-do list
+            if (!input.equals("quit")) {
+                toDoList.add(input);
+                System.out.println("Item added to to-do list.");
+            }
+        }
+
+        // print out the to-do list
+        System.out.println("To-Do List:");
+        for (int i = 0; i < toDoList.size(); i++) {
+            System.out.println((i + 1) + ". " + toDoList.get(i));
+        }
+    }
+}
